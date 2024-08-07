@@ -166,10 +166,10 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/* <audio src="/audio/music.mp3" id="music" loop>
+      <audio src="/audio/music.mp3" id="music" loop>
         Your browser does not support the
         <code>audio</code> element.
-      </audio> */}
+      </audio>
     </div>
   );
 };
