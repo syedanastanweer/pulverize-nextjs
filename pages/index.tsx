@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             <div className="col-md-6">
               <div className="topbar right-menu">
                 <button type="button" className="btn btn-primary on-lorem">
-                  on an Lorem here now <img className="vector-icon" alt="" src="assets/img/play.png" />
+                  on an Lorem here now a <img className="vector-icon" alt="" src="assets/img/play.png" />
                 </button>
                 <button className="menu-toggle">☰</button>
               </div>
