@@ -1,0 +1,37 @@
+{
+  "name": "next-three-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-spring/three": "^9.6.0",
+    "@react-three/drei": "^9.32.0",
+    "@react-three/fiber": "^8.0.27",
+    "@react-three/postprocessing": "^2.7.0",
+    "@types/three": "^0.141.0",
+    "animejs": "^3.2.1",
+    "leva": "^0.9.34",
+    "next": "^12.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-spring": "^9.4.5",
+    "sass": "^1.53.0",
+    "three": "^0.142.0",
+    "use-debounce": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.4",
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.2.0",
+    "typescript": "4.7.4"
+  }
+}
