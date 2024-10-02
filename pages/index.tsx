@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useRef } from "react";
 import styles from "../styles/Home.module.scss";
+import CanvasWrapper from "../components/layouts/canvas/CanvasWrapper"; // Include here
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -13,13 +14,13 @@ const Home: NextPage = () => {
           const st = window.pageYOffset || document.documentElement.scrollTop;
           if (entry.isIntersecting) {
             if (st > lastScrollTop) {
-              entry.target.classList.remove('animate-out');
-              entry.target.classList.add('animate-in');
+              entry.target.classList.remove("animate-out");
+              entry.target.classList.add("animate-in");
             }
           } else {
             if (st < lastScrollTop) {
-              entry.target.classList.remove('animate-in');
-              entry.target.classList.add('animate-out');
+              entry.target.classList.remove("animate-in");
+              entry.target.classList.add("animate-out");
             }
           }
           lastScrollTop = st <= 0 ? 0 : st;
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.animate');
+    const elements = document.querySelectorAll(".animate");
     elements.forEach((el) => observer.observe(el));
 
     return () => {
@@ -36,13 +37,18 @@ const Home: NextPage = () => {
     };
   }, []);
 
+  const divRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <div className={styles.container}>
       <Head>
         <title>PULVERIZE</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+        />
         <link href="assets/css/style.css" rel="stylesheet" />
       </Head>
 
@@ -52,14 +58,16 @@ const Home: NextPage = () => {
             <div className="col-md-6">
               <div className="topbar left-menu">
                 <button type="button" className="btn btn-primary on-lorem">
-                  Play Trailer <img className="vector-icon" alt="" src="assets/img/play.png" />
+                  Play Trailer{" "}
+                  <img className="vector-icon" alt="" src="assets/img/play.png" />
                 </button>
               </div>
             </div>
             <div className="col-md-6">
               <div className="topbar right-menu">
                 <button type="button" className="btn btn-primary on-lorem">
-                  on an Lorem here now a <img className="vector-icon" alt="" src="assets/img/play.png" />
+                  on an Lorem here now a{" "}
+                  <img className="vector-icon" alt="" src="assets/img/play.png" />
                 </button>
                 <button className="menu-toggle">☰</button>
               </div>
@@ -67,6 +75,9 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+
+      {/* Add the CanvasWrapper here for 3D model rendering */}
+      <CanvasWrapper fwdRef={divRef} setReveal={() => {}} />
 
       <div className="overlay-content">
         <section id="sec1" className="secti">
@@ -86,7 +97,11 @@ const Home: NextPage = () => {
               <div className="col-md-6">
                 <div className="sec-text-left">
                   <h2>Lorem ipsuems in, your themis</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud.
+                  </p>
                 </div>
               </div>
             </div>
@@ -99,7 +114,12 @@ const Home: NextPage = () => {
               <div className="col-md-6">
                 <div className="sec-text-right">
                   <h2>Different heading for section 3</h2>
-                  <p>Different content for section 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                  <p>
+                    Different content for section 3. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud.
+                  </p>
                 </div>
               </div>
               <div className="col-md-6"></div>
@@ -114,7 +134,12 @@ const Home: NextPage = () => {
               <div className="col-md-6">
                 <div className="sec-text-left">
                   <h2>Another heading for section 4</h2>
-                  <p>Another content for section 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                  <p>
+                    Another content for section 4. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud.
+                  </p>
                 </div>
               </div>
             </div>
@@ -127,11 +152,15 @@ const Home: NextPage = () => {
               <div className="col-md-6">
                 <div className="sec-text-right">
                   <h2>Final heading for section 5</h2>
-                  <p>Final content for section 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+                  <p>
+                    Final content for section 5. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud.
+                  </p>
                 </div>
               </div>
               <div className="col-md-6"></div>
-
             </div>
           </div>
         </section>
@@ -142,22 +171,42 @@ const Home: NextPage = () => {
           <div className="row">
             <div className="col-md-3">
               <div className="layout-left">
-                <button className="btn btn-primary on-lorem" style={{ marginRight: 0, paddingRight: "20px" }}>
-                  OUR ROADMAPS <img className="vector-icon" alt="" src="assets/img/3d/roadmaps.png" />
+                <button
+                  className="btn btn-primary on-lorem"
+                  style={{ marginRight: 0, paddingRight: "20px" }}
+                >
+                  OUR ROADMAPS{" "}
+                  <img
+                    className="vector-icon"
+                    alt=""
+                    src="assets/img/3d/roadmaps.png"
+                  />
                 </button>
               </div>
             </div>
             <div className="col-md-6">
               <div className="layout-center">
                 <p className="roadmaps fw-800 webbtn">
-                  PRESS <button className="custom-btn"><img src="assets/img/btn1.png" /></button> TO SWITCH
+                  PRESS{" "}
+                  <button className="custom-btn">
+                    <img src="assets/img/btn1.png" />
+                  </button>{" "}
+                  TO SWITCH
                 </p>
-                <p className="roadmaps fw-800 mobbtn"><button className="custom-btn"><img src="assets/img/btn1.png" /></button></p>
+                <p className="roadmaps fw-800 mobbtn">
+                  <button className="custom-btn">
+                    <img src="assets/img/btn1.png" />
+                  </button>
+                </p>
               </div>
             </div>
             <div className="col-md-3">
               <div className="layout-right">
-                <button type="button" className="btn btn-primary on-lorem" style={{ marginRight: 0, paddingRight: "20px" }}>
+                <button
+                  type="button"
+                  className="btn btn-primary on-lorem"
+                  style={{ marginRight: 0, paddingRight: "20px" }}
+                >
                   LOREM IPSUM <img src="assets/img/arrow.png" />
                 </button>
               </div>

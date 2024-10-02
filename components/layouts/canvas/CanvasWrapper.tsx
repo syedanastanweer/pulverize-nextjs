@@ -1,12 +1,5 @@
-import React, {
-  Dispatch,
-  Ref,
-  RefObject,
-  SetStateAction,
-  useEffect,
-  useRef,
-} from "react";
-import { Canvas, RootState, useFrame } from "@react-three/fiber";
+import React, { Dispatch, SetStateAction, RefObject } from "react";
+import { Canvas, RootState } from "@react-three/fiber";
 import ErrorBoundary from "../../singleComponents/ErrorBoundary/ErrorBoundary";
 import useStore from "../../singleComponents/Hooks/useStore";
 import ExampleScene from "../../Home/Scene";
@@ -15,33 +8,23 @@ import { PerformanceMonitor } from "@react-three/drei";
 import AdaptPixelRatio from "../../singleComponents/Performance/AdaptPixelRatio";
 import ImprovedGpu from "../../singleComponents/Performance/ImprovedGPU";
 
-function getMousePos(e: React.MouseEvent<Element, MouseEvent>) {
-  return { x: e.clientX, y: e.clientY };
-}
-
-export default function CanvasWrapper(props: {
-  fwdRef: RefObject<HTMLDivElement | null>;
+const CanvasWrapper = (props: {
+  fwdRef: RefObject<HTMLDivElement>;
   setReveal: Dispatch<SetStateAction<boolean>>;
-}) {
+}) => {
   const GPUTier = useStore((state) => state.GPUTier);
-  const mouse = useRef({ x: 0, y: 0 });
 
   const onCanvasCreated = (state: RootState) => {
     state.gl.physicallyCorrectLights = true;
-    if (state.events.connect) {
+    if (state.events.connect && props.fwdRef.current) {
       state.events.connect(props.fwdRef.current);
     }
   };
-
-  useEffect(() => {
-    console.log(GPUTier);
-  }, [GPUTier]);
 
   return (
     <div className="canvas_wrapper">
       <ErrorBoundary fallback={<ErrorMessage />}>
         <Canvas
-          onMouseMove={(e) => (mouse.current = getMousePos(e))}
           onCreated={(state) => {
             onCanvasCreated(state);
           }}
@@ -62,4 +45,6 @@ export default function CanvasWrapper(props: {
       </ErrorBoundary>
     </div>
   );
-}
+};
+
+export default CanvasWrapper;

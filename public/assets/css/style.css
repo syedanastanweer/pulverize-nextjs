@@ -51,8 +51,8 @@ body {
 }
 
 .btn-primary.on-lorem:hover .vector-icon {
-background: #252525;
-border-radius: 50%;
+    background: #252525;
+    border-radius: 50%;
 }
 
 
@@ -273,33 +273,35 @@ button.menu-toggle:hover {
 }
 
 .animate-in {
-animation: fadeInFlip 2s forwards;
+    animation: fadeInFlip 2s forwards;
 }
 
 .animate-out {
-animation: fadeOutFlip 2s forwards;
+    animation: fadeOutFlip 2s forwards;
 }
 
 @keyframes fadeInFlip {
-0% {
-  opacity: 0;
-  transform: rotateX(-90deg);
-}
-100% {
-  opacity: 1;
-  transform: rotateX(0deg);
-}
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
 }
 
 @keyframes fadeOutFlip {
-0% {
-  opacity: 1;
-  transform: rotateX(0deg);
-}
-100% {
-  opacity: 0;
-  transform: rotateX(90deg);
-}
+    0% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
 }
 
 #loading-indicator {
@@ -310,56 +312,110 @@ animation: fadeOutFlip 2s forwards;
     z-index: 3;
     color: white;
 }
-                p.roadmaps.fw-800.webbtn {
-display: block;
-display: block;
-font-weight: 900;
-font-size: 20px;
+
+p.roadmaps.fw-800.webbtn {
+    display: block;
+    display: block;
+    font-weight: 900;
+    font-size: 20px;
 }
 
-                p.roadmaps.fw-800.mobbtn {
-display: none;
+p.roadmaps.fw-800.mobbtn {
+    display: none;
+}
+
+.sec-text-left .heading h2 {
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.sec-text-left .paragraph {
+    padding-top: 20px;
+}
+
+.sec-text-right .image img {
+    height: 100%;
+    width: 100%;
+}
+
+/* .sec-text-right .heading h2 {
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: 900;
+    color: #ffffff;
+    padding-top: 40px;
+} */
+
+.sec-text-right .paragraph {
+    padding-top: 20px;
+}
+
+.sec-footer-heading h2 {
+    width: 60%;
+    font-size: 20px;
+    font-weight: 800;
+}
+.sec-footer-heading p.para1 {
+    font-size: 20px;
+    padding-top: 14px;
+}
+.sec-footer-heading p.para2 {
+    font-size: 20px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 520px) {
     .title {
         font-size: 44px;
     }
-    .topbar.left-menu{
-        display:none;
+
+    .topbar.left-menu {
+        display: none;
     }
-    .topbar.right-menu{
+
+    .topbar.right-menu {
         float: none;
         text-align: center;
     }
+
     .btn-primary.on-lorem {
         font-size: 10px;
     }
+
     .layout-left {
         display: none;
     }
+
     .layout-right {
         display: none;
     }
+
     p.roadmaps.fw-800.webbtn {
         display: none;
     }
+
     .layout-center {
         margin-right: 40px;
     }
+
     p.roadmaps.fw-800.mobbtn {
         display: block;
     }
+
     .sec-text-left h2 {
         font-size: 24px;
     }
+
     .sec-text-left p {
         font-size: 14px;
     }
+
     .sec-text-right h2 {
         font-size: 24px;
     }
+
     .sec-text-right p {
         font-size: 14px;
     }
-  }
+}

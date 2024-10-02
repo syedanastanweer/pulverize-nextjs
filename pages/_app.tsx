@@ -1,14 +1,12 @@
 import "../styles/globals.scss";
 import "../styles/_grid.scss";
 import type { AppProps } from "next/app";
-import CanvasWrapper from "../components/layouts/canvas/CanvasWrapper";
 import ErrorBoundary from "../components/singleComponents/ErrorBoundary/ErrorBoundary";
 import { useDetectGPU } from "@react-three/drei";
 import useStore from "../components/singleComponents/Hooks/useStore";
 import { useRef, useEffect, useState } from "react";
 import { useSpring } from "react-spring";
 import { useThrottledCallback } from "use-debounce";
-import { getPositions } from "../components/singleComponents/Utils/Utils";
 import ErrorMessage from "../components/singleComponents/ErrorBoundary/ErrorMessage";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -68,7 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
       </div>
       <ErrorBoundary fallback={<ErrorMessage />}>
-        <CanvasWrapper fwdRef={fwdRef} setReveal={setReveal} />
+        {/* CanvasWrapper removed from here */}
         <div className="dom">
           <Component {...pageProps} />
         </div>
