@@ -1,14 +1,14 @@
 # THREEJS Pulverize Project
 <h4>by Syed Anas Tanweer</h4>
 
-<p>Boilerplate repo for React Three Fiber app using Next.js and Typescript</p>
+<p>Pulverize The Stigma, Threejs Model Rotate on Scroll Landing Page, React Three Fiber using Next.js and Typescript</p>
 
 <p align="center">
-    <a href="https://pulverize.vercel.app/" target="_blank"><img src="./assets/img/cover.jpg" width="100%"/></a>
+    <a href="https://pulverize.vercel.app" target="_blank"><img src="./public/assets/img/cover.jpg" width="100%"/></a>
 </p>
 
 # Live Link
-Click here: <a href="https://pulverize.vercel.app/" target="_blank">https://pulverize.vercel.app/</a>
+Click here: <a href="https://pulverize.vercel.app" target="_blank">https://pulverize.vercel.app</a>
 
 
 # Getting Started

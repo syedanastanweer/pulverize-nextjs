@@ -39,9 +39,51 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>PULVERIZE</title>
+        <title>Pulverize The Stigma</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" href="/assets/img/logo.png" />
+        <link rel="apple-touch-icon" href="/assets/img/logo.png" />
+
+        <meta name="author" content="Syed Anas Tanweer" />
+        <meta
+          name="description"
+          content="Pulverize The Stigma, Threejs Model Rotate on Scroll Landing Page, React Three Fiber using Next.js and Typescript, Developed by Syed Anas Tanweer"
+        />
+
+        <meta property="og:url" content="https://pulverize.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Pulverize The Stigma | Developed by Syed Anas Tanweer" />
+        <meta
+          property="og:description"
+          content="Pulverize The Stigma, Threejs Model Rotate on Scroll Landing Page, React Three Fiber using Next.js and Typescript, Developed by Syed Anas Tanweer"
+        />
+        <meta property="og:image" content="/assets/img/logo.png" />
+
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Pulverize The Stigma | Developed by Syed Anas Tanweer" />
+
+        <meta httpEquiv="content-language" content="en-us" />
+        <meta httpEquiv="content-language" content="en-ca" />
+        <meta httpEquiv="content-language" content="en-gb" />
+        <link rel="alternate" hrefLang="x-default" href="https://pulverize.vercel.app" />
+
+        <link rel="canonical" href="https://pulverize.vercel.app" />
+
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow, max-snippet:-1" />
+        <meta name="bingbot" content="noindex, nofollow, max-snippet:-1" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="https://pulverize.vercel.app" />
+        <meta property="twitter:url" content="https://pulverize.vercel.app" />
+        <meta name="twitter:title" content="Pulverize The Stigma | Developed by Syed Anas Tanweer" />
+        <meta name="twitter:description" content="Pulverize The Stigma, Threejs Model Rotate on Scroll Landing Page, React Three Fiber using Next.js and Typescript, Developed by Syed Anas Tanweer" />
+        <meta name="twitter:image" content="/assets/img/logo.png" />
+
+        <meta name="keywords" content="ThreeJS, React, HTML, CSS, JavaScript" />
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="assets/css/style.css" rel="stylesheet" />
       </Head>
